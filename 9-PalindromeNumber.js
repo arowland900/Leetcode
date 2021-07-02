@@ -11,3 +11,14 @@ var isPalindrome = function (x) {
         } else return true
     }
 };
+
+// Solution without string conversion
+var isPalindrome = function (x) {
+    if (x < 0 || (!(x % 10) && x)) return false
+    let y = 0
+    while (x > y) {
+        y = y * 10 + x % 10
+        x = parseInt(x / 10)
+    }
+    return x == y || x == parseInt(y / 10)
+};
