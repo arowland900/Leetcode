@@ -13,3 +13,14 @@ var sortedSquares = function (nums) {
     }
     return arr
 };
+
+var sortedSquares = function (nums) {
+    let i = 0, j = nums.length - 1
+    let arr = []
+
+    while (i <= j) {
+        if (nums[i] ** 2 > nums[j] ** 2) arr.unshift(nums[i++] ** 2)
+        else arr.unshift(nums[j--] ** 2)
+    }
+    return arr
+};
