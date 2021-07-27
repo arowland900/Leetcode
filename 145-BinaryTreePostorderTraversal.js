@@ -11,3 +11,18 @@ var postorderTraversal = function (root, arr = []) {
 
     return arr
 };
+
+// Iterative
+var postorderTraversal = function (root) {
+    let res = []
+    let stack = [root]
+    while (stack.length) {
+        let curr = stack.pop()
+        if (curr) {
+            res.unshift(curr.val)
+            stack.push(curr.left)
+            stack.push(curr.right)
+        }
+    }
+    return res
+};
