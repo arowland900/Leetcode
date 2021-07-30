@@ -7,3 +7,19 @@ var preorder = function (root, res = []) {
     for (c of root.children) preorder(c, res)
     return res
 };
+
+// Iterative
+var preorder = function (root) {
+    if (!root) return [];
+
+    const stack = [root];
+    const result = [];
+
+    while (stack.length) {
+        const node = stack.pop();
+        result.push(node.val);
+        for (c of node.children.reverse()) stack.push(c)
+    }
+
+    return result;
+};
