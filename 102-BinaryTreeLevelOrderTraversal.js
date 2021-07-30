@@ -13,3 +13,25 @@ var levelOrder = function (root, res = [], level = 0) {
 
     return res
 };
+
+// Iterative
+var levelOrder = function (root) {
+    if (!root) return []
+
+    let res = []
+    let queue = [root]
+
+    while (queue.length) {
+        let level = []
+        let q = queue.length
+
+        for (let i = 0; i < q; i++) {
+            let node = queue.shift()
+            level.push(node.val)
+            if (node.left) queue.push(node.left)
+            if (node.right) queue.push(node.right)
+        }
+        res.push(level)
+    }
+    return res
+};
