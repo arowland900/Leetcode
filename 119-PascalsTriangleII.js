@@ -1,5 +1,6 @@
 // https://leetcode.com/problems/pascals-triangle-ii/
 
+// Solution 1
 var getRow = function (rowIndex) {
     let table = [[1]]
 
@@ -13,4 +14,19 @@ var getRow = function (rowIndex) {
     }
 
     return table[rowIndex]
+};
+
+// Solution 2
+var getRow = function (rowIndex) {
+
+    let row = [1]
+
+    for (let i = 0; i < rowIndex; i++) {
+        for (let j = i; j > 0; j--) {
+            row[j] += row[j - 1]
+        }
+        row.push(1)
+    }
+
+    return row
 };
