@@ -1,5 +1,6 @@
 // https://leetcode.com/problems/maximum-subarray/
 
+// Iterative Solution
 var maxSubArray = function (nums) {
 
     let max = nums[0], currMax = nums[0]
@@ -11,3 +12,4 @@ var maxSubArray = function (nums) {
 
     return max
 };
+
