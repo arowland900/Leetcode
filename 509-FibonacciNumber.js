@@ -26,7 +26,7 @@ var fib = function (n, memo = {}) {
     return memo[n]
 };
 
-// Iterative 
+// Iterative TC: O(n) SC: O(1)
 var fib = function (n) {
     if (n < 2) return n
     let current = 0
