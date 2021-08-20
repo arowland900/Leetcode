@@ -12,16 +12,32 @@ var fib = function (n) {
 };
 
 // Recursion TC: O(2^n) SC: O(n)
-var fib = function(n) {
-    if(n < 2) return n
+var fib = function (n) {
+    if (n < 2) return n
 
-    return fib(n-1) + fib(n-2)
+    return fib(n - 1) + fib(n - 2)
 };
 
 // Recursion with Memo TC: O(n) SC: o(n)
-var fib = function(n, memo={}) {
-    if(memo[n]) return memo[n]
-    if(n < 2) return n
-    memo[n] = fib(n-1, memo) + fib(n-2, memo)
+var fib = function (n, memo = {}) {
+    if (memo[n]) return memo[n]
+    if (n < 2) return n
+    memo[n] = fib(n - 1, memo) + fib(n - 2, memo)
     return memo[n]
+};
+
+// Iterative 
+var fib = function (n) {
+    if (n < 2) return n
+    let current = 0
+    let prev = 1
+    let twoPrev = 0
+
+    for (let i = 2; i <= n; i++) {
+        current = prev + twoPrev
+        twoPrev = prev
+        prev = current
+
+    }
+    return current
 };
