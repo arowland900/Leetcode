@@ -19,3 +19,9 @@ var fib = function(n) {
 };
 
 // Recursion with Memo TC: O(n) SC: o(n)
+var fib = function(n, memo={}) {
+    if(memo[n]) return memo[n]
+    if(n < 2) return n
+    memo[n] = fib(n-1, memo) + fib(n-2, memo)
+    return memo[n]
+};
