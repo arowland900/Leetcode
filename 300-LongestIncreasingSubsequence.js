@@ -14,3 +14,23 @@ var lengthOfLIS = function(nums) {
     
     return Math.max(...table)
 };
+
+// slight improvement
+var lengthOfLIS = function(nums) {
+    let sub = [nums[0]]
+    
+    for(let num of nums){
+        console.log(num)
+        if(num > sub[sub.length-1]){
+            sub.push(num)
+        } else {
+            let i = 0
+            while(num > sub[i]){
+                i++
+            }
+            sub[i] = num
+        }
+    }
+    
+    return sub.length
+};
