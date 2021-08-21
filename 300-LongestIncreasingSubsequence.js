@@ -35,7 +35,7 @@ var lengthOfLIS = function (nums) {
     return sub.length
 };
 
-// Binary Search
+// Binary Search TC: O(n log n) SC: O(n)
 var lengthOfLIS = function (nums) {
     let sub = []
     for (let num of nums) {
